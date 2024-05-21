@@ -1,0 +1,97 @@
+<div style="background-color: white;margin: -20px; padding: 10px;">
+    <div class="p-3 form-box rounded-md w-50 mx-auto m-5">
+        <h2 style="color: #181642" class="text-center mb-3">Update Job</h2>
+        <form action="/jobs/<%= job.id %>/update" method="post">
+            <div class="mb-3">
+                <select class="form-select" aria-label="Default select example" name="jobcategory"
+                    value="<%= job.jobcategory %>">
+                    <option selected>select job category</option>
+                    <option value="Tech" <% if (job.jobcategory==='Tech' ) { %> selected <% } %>>Tech</option>
+                    <option value="Non Tech" <% if (job.jobcategory==='Non Tech' ) { %> selected <% } %>>Non Tech
+                    </option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <select class="form-select" aria-label="Default select example" name="jobdesignation">
+                    <option selected>select job designation</option>
+                    <option value="HR" <% if (job.jobdesignation==='HR' ) { %> selected <% } %>>HR</option>
+                    <option value="SDE" <% if (job.jobdesignation==='SDE' ) { %> selected <% } %>>SDE</option>
+                    <option value="DevOps" <% if (job.jobdesignation==='DevOps' ) { %> selected <% } %>>DevOps</option>
+                    <option value="MERN Developer" <% if (job.jobdesignation==='MERN Developer' ) { %> selected <% } %>
+                            >MERN Developer</option>
+                    <option value="MEAN Developer" <% if (job.jobdesignation==='MEAN Developer' ) { %> selected <% } %>
+                            >MEAN Developer</option>
+                    <option value="JAVA Developer" <% if (job.jobdesignation==='JAVA Developer' ) { %> selected <% } %>
+                            >JAVA Developer</option>
+                    <option value="Front-End Developer" <% if (job.jobdesignation==='Front-End Developer' ) { %>
+                        selected <% } %>>Front-End Developer</option>
+                    <option value="Back-End Developer" <% if (job.jobdesignation==='Back-End Developer' ) { %> selected
+                        <% } %>>Back-End Developer
+                    </option>
+                    <option value="Full-Stack Developer" <% if (job.jobdesignation==='Full-Stack Developer' ) { %>
+                        selected <% } %>>Full-Stack Developer</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="location" class="form-label">Enter Job Location</label>
+                <input type="text" class="form-control" id="location" name="joblocation" aria-describedby="location"
+                    required value="<%= job.joblocation %>">
+            </div>
+            <div class="mb-3">
+                <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">Company Name</div>
+                    </div>
+                    <input type="text" class="form-control" id="company" name="companyname" aria-describedby="company"
+                        required value="<%= job.companyname %>">
+                </div>
+            </div>
+            <div class="d-flex">
+                <div class="mb-3 w-50">
+                    <input type="text" class="form-control" id="salary" name="salary" placeholder="Enter salary"
+                        aria-describedby="salary" required value="<%= job.salary %>">
+                </div>
+                <div class="mb-3 w-50">
+                    <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">Total Openings</div>
+                    </div>
+                    <input type="text" class="form-control" id="openings" name="numberofopenings"
+                        aria-describedby="openings" required value="<%= job.numberofopenings %>">
+                        </div>
+                </div>
+            </div>
+            <div class="d-flex">
+                <div class="mb-3 w-50">
+                    <select class="form-select" aria-label="Default select example" name="skillsrequired" multiple>
+                        <option selected>select required skills for job</option>
+                        <option value="React">React</option>
+                        <option value="NodeJS">NodeJS</option>
+                        <option value="Angular">Angular</option>
+                        <option value="MongoDB">MongoDB</option>
+                        <option value="SQL">SQL</option>
+                        <option value="Express">Express</option>
+                        <option value="Java">Java</option>
+                        <option value="SpringBoot">SpringBoot</option>
+                        <option value="C++">C++</option>
+                        <option value="DataStructures & Algos">DataStructures & Algos</option>
+                    </select>
+                </div>
+        
+                <div class="mb-3 w-50 align-self-center">
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">Apply By</div>
+                        </div>
+                        <input type="date" id="applyBy" name="applyby" value="<%= job.applyby %>">
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-success w-100">Update</button>
+        </form>
+    </div>
+
+
+
+
+</div>

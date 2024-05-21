@@ -1,0 +1,57 @@
+<!-- <div class="card-columns-3"> -->
+<div style="background-color: rgb(14,13,35);margin: -20px; padding: 10px; min-height: 100vh;">
+
+  <% if(locals.lastVisit){ %>
+    <div class="alert alert-primary m-4" role="alert">
+        Your Last Visit was on : <%= locals.lastVisit %>
+    </div>
+    <% } %>
+  <div class="container">
+    <div class="row g-4 d-flex">
+      <% jobsData.forEach((job)=>{ %>
+        <div class="col-12 col-md-4">
+          <div class="card bg-transparent border text-white m-5 rounded-3"
+            style="height:370px; overflow: auto; width:100%; max-width:18rem;">
+            <div class="card-header mt-2">
+              <span
+                class="bg-primary bg-opacity-25 text-white border-success border p-2 border-opacity-50 rounded">Actively
+                Hiring <i class="bi bi-graph-up-arrow text-success mx-2"></i></span>
+              <h5 class="card-title text-warning pt-3">
+                <%= job.companyname %>
+              </h5>
+              <div>
+                <span class="card-text">
+                  <%= job.jobcategory%>
+                </span>
+                <span class="card-text text-info">
+                  <%= job.jobdesignation %>
+                </span>
+              </div>
+            </div>
+            <div class="card-body pb-0">
+              <div><i class="fa-solid fa-location-dot"></i><span class="card-text p-2">
+                  <%= job.joblocation %>
+                </span></div>
+              <p class="card-text pt-3">₹ <%= job.salary %>
+              </p>
+              <div class="d-flex flex-wrap m-2">
+                <% job.skillsrequired.forEach((skill)=>{ %>
+                  <span class="me-2 mb-2">
+                    <button class="btn btn-sm btn-outline-info">
+                      <%= skill %>
+                    </button>
+                  </span>
+                  <%})%>
+              </div>
+            </div>
+            <div class="card-footer">
+              <a href="/jobs/<%= job.id %>" class="w-100 btn btn-outline-success mb-2">View Details</a>
+            </div>
+          </div>
+        </div>
+        <% })%>
+
+    </div>
+  </div>
+
+</div>

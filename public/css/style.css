@@ -1,0 +1,43 @@
+
+
+.container-fluid,.navbar{
+    background-color: rgb(24,22,66);
+}
+
+.white-color,.navbar-brand{
+    color: white !important;
+}
+
+
+.jumbotron p{
+    color:white
+}
+
+.loginForm{
+    background-color: white;
+}
+
+.text-black {
+    color: black;
+  }
+
+  .height100Vh{
+    min-height: 100vh !important;
+  }
+
+  .mainheading{
+    color:#FF2C90;
+    font-weight:500;
+    font-size: 2.5em;
+  }
+
+  .leftContent{
+ margin-left: 50px;
+  }
+
+  .form-box{
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-top: 5px solid #181642;
+    border-left:3px solid #181642;
+    border-radius: 10px;
+  }
